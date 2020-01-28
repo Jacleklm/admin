@@ -61,7 +61,7 @@ const AddArticle = props => {
 	const saveArticle = () => {
 		// marked.markedContent() //先进行转换
 
-		if (!selectedType) {
+		if (selectedType === '请选择文章类别') {
 			message.error('必须选择文章类别')
 			return false
 		} else if (!articleTitle) {
@@ -160,7 +160,7 @@ const AddArticle = props => {
 			<Row gutter={5}>
 				<Col span={18}>
 					<Row gutter={10}>
-						<Col span={20}>
+						<Col span={19}>
 							<Input 
 								value={articleTitle}
 								placeholder="博客标题" 
@@ -169,7 +169,7 @@ const AddArticle = props => {
 								}}
 								size="large" />
 						</Col>
-						<Col span={4}>
+						<Col span={5}>
 							&nbsp;
 							<Select defaultValue={selectedType} size="large"
 								onChange={selectTypeHandler}>

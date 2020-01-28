@@ -16,7 +16,7 @@ const AdminIndex = (props) => {
 	}
 
 	const handleClickArticle = e => {
-		console.log(e.item.props)
+		// console.log(e.item.props)
 		if (e.key === 'addArticle') {
 			props.history.push('/index/add')
 		} else {

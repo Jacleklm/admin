@@ -20,7 +20,7 @@ const ArticleList = props => {
       withCredentials: true,
       header: { 'Access-Control-Allow-Origin': '*' }
     }).then(res => {
-      setList(res.data.list)
+			setList(res.data.list)
     })
   }
   //删除文章
@@ -56,19 +56,15 @@ const ArticleList = props => {
 						<Col span={8}>
 							<b>标题</b>
 						</Col>
-						<Col span={3}>
+						<Col span={4}>
 							<b>类别</b>
 						</Col>
-						<Col span={3}>
+						<Col span={4}>
 							<b>发布时间</b>
 						</Col>
-						<Col span={3}>
-							<b>集数</b>
-						</Col>
-						<Col span={3}>
+						<Col span={4}>
 							<b>浏览量</b>
 						</Col>
-
 						<Col span={4}>
 							<b>操作</b>
 						</Col>
@@ -80,15 +76,11 @@ const ArticleList = props => {
 					<List.Item>
 						<Row className="list-div">
 							<Col span={8}>{item.title}</Col>
-							<Col span={3}>{item.typeName}</Col>
-							<Col span={3}>{item.addTime}</Col>
-							<Col span={3}>
-								共<span>{item.part_count}</span>集
-							</Col>
-							<Col span={3}>{item.view_count}</Col>
-
+							<Col span={4}>{item.typeName}</Col>
+							<Col span={4}>{item.addTime}</Col>
+							<Col span={4}>{item.view_count}</Col>
 							<Col span={4}>
-								<Button onClick={updateArticle} type="primary">修改</Button>&nbsp;
+								<Button onClick={() => {updateArticle(item.id)}} type="primary">修改</Button>&nbsp;
 								<Button onClick={()=>{delArticle(item.id)}} >删除 </Button>
 							</Col>
 						</Row>
