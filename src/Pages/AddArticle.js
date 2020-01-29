@@ -39,7 +39,7 @@ const AddArticle = props => {
 			setArticleId(tmpId)
 			getArticleById(tmpId)
 		}
-	}, [])
+	}, [selectedType])
 
 	const changeContent = e => {
 		setArticleContent(e.target.value)

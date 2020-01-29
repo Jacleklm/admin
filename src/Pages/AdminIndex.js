@@ -33,10 +33,10 @@ const AdminIndex = (props) => {
 						<Icon type="pie-chart" />
 						<span>工作台</span>
 					</Menu.Item>
-					<Menu.Item key="2">
+					{/*<Menu.Item key="2">
 						<Icon type="desktop" />
 						<span>添加文章</span>
-					</Menu.Item>
+					</Menu.Item>*/}
 					<SubMenu
 						key="sub1"
 						onClick={handleClickArticle}
@@ -51,10 +51,10 @@ const AdminIndex = (props) => {
 						<Menu.Item key="articleList">文章列表</Menu.Item>
 					</SubMenu>
 
-					<Menu.Item key="9">
+					{/*<Menu.Item key="9">
 						<Icon type="file" />
 						<span>留言管理</span>
-					</Menu.Item>
+					</Menu.Item>*/}
 				</Menu>
 			</Sider>
 			<Layout>
