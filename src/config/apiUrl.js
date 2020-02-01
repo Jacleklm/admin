@@ -1,4 +1,4 @@
-let ipUrl = 'http://localhost:7002/admin/' 
+let ipUrl = 'http://localhost:7001/admin/' 
 
 let servicePath = {
   index:ipUrl + 'index' ,                   //  其实是一个测试
