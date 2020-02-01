@@ -26,10 +26,10 @@ const AddArticle = props => {
 	const [markdownContent, setMarkdownContent] = useState('预览内容') //html内容
 	const [introducemd, setIntroducemd] = useState() //简介的markdown内容
 	const [introducehtml, setIntroducehtml] = useState('等待编辑') //简介的html内容
-	const [showDate, setShowDate] = useState() //发布日期
+	const [showDate, setShowDate] = useState('') //发布日期
 	const [updateDate, setUpdateDate] = useState() //修改日志的日期
 	const [typeInfo, setTypeInfo] = useState([]) // 文章类别信息
-	const [selectedType, setSelectType] = useState('请选择文章类别') //选择的文章类别
+	const [selectedType, setSelectedType] = useState('请选择文章类别') //选择的文章类别
 
 	useEffect(() => {
 		getTypeInfo()
@@ -54,7 +54,7 @@ const AddArticle = props => {
 	}
 
 	const selectTypeHandler = (value) => {
-	  setSelectType(value)
+	  setSelectedType(value)
 	}
 
 	//保存文章的方法
@@ -134,6 +134,7 @@ const AddArticle = props => {
 				props.history.push('/')
 			} else {
 				setTypeInfo(res.data.data)
+				console.log(res.data.data)
 			}
 		})
 	}
@@ -151,7 +152,7 @@ const AddArticle = props => {
 			let tmpInt = marked(res.data.data[0].introduce)
 			setIntroducehtml(tmpInt)
 			setShowDate(res.data.data[0].addTime)
-			setSelectType(res.data.data[0].typeId)
+			setSelectedType(res.data.data[0].typeId)
 		})
 	}
 
@@ -171,7 +172,10 @@ const AddArticle = props => {
 						</Col>
 						<Col span={5}>
 							&nbsp;
-							<Select defaultValue={selectedType} size="large"
+							<Select
+								defaultValue={selectedType}
+								firstActiveValue={selectedType === '请选择文章类别' ? '1' : selectedType.toString()}
+								size="large"
 								onChange={selectTypeHandler}>
 								{typeInfo.map((item, index) => {
 									return (
@@ -231,11 +235,13 @@ const AddArticle = props => {
 						</Col>
 						<Col span={12}>
 							<div className="date-select">
-								<DatePicker placeholder="发布日期" size="large" 
-								onChange={(date, dateString) => {
-									// console.log(date)
-									// console.log(dateString)
-									setShowDate(dateString)}}/>
+								<DatePicker
+									placeholder={showDate === '' ? '发布日期' : showDate}
+									size="large" 
+									onChange={(date, dateString) => {
+										// console.log(date) // 是一个Moment对象
+										// console.log(dateString) // 是'2020-02-18'这种格式
+										setShowDate(dateString)}}/>
 							</div>
 						</Col>
 					</Row>

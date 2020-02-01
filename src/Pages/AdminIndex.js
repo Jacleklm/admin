@@ -4,6 +4,7 @@ import '../static/css/AdminIndex.css'
 import { Route } from 'react-router-dom'
 import AddArticle from './AddArticle'
 import ArticleList from './ArticleList'
+import Welcome from './Welcome'
 
 const { Header, Content, Footer, Sider } = Layout
 const { SubMenu } = Menu
@@ -66,9 +67,10 @@ const AdminIndex = (props) => {
 					</Breadcrumb>
 					<div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
 						<div>
+							<Route path="/index" exact component={Welcome} />
 							<Route path="/index/add/" exact component={AddArticle} />
 							<Route path="/index/add/:id" exact component={AddArticle} />
-							<Route path="/index/list/" component={ArticleList} />
+							<Route path="/index/list/" exact component={ArticleList} />
 						</div>
 					</div>
 				</Content>
