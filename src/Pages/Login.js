@@ -32,7 +32,7 @@ const Login = props => {
 			method: 'post',
 			url: servicePath.checkLogin,
 			data: dataProps,
-			withCredentials: true // 这一条要带！作用？
+			withCredentials: true
 		}).then(res => {
 			setIsLoading(false)
 			if (res.data.data === '登录成功') {

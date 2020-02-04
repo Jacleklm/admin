@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd'
 import '../static/css/AdminIndex.css'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import AddArticle from './AddArticle'
 import ArticleList from './ArticleList'
 import Welcome from './Welcome'
@@ -28,7 +28,7 @@ const AdminIndex = (props) => {
 	return (
 		<Layout style={{ minHeight: '100vh' }}>
 			<Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-				<div className="logo" />
+				<div className="logo">&nbsp;&nbsp;JacleKlm<Link to="/login">Logout</Link></div>
 				<Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
 					<Menu.Item key="1">
 						<Icon type="pie-chart" />

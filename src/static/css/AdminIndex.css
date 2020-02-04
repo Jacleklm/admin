@@ -1,7 +1,12 @@
 .logo {
-  height: 32px;
+  line-height: 32px;
   background: rgba(255, 255, 255, 0.2);
   margin: 16px;
+}
+a {
+  display: inline-block;
+  float: right;
+  margin-right: .5rem;
 }
 .list-div {
   width: 100%;

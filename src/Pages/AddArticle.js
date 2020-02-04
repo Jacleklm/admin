@@ -134,7 +134,6 @@ const AddArticle = props => {
 				props.history.push('/')
 			} else {
 				setTypeInfo(res.data.data)
-				console.log(res.data.data)
 			}
 		})
 	}
@@ -208,7 +207,6 @@ const AddArticle = props => {
 				<Col span={6}>
 					<Row>
 						<Col span={24}>
-							<Button size="large">暂存文章</Button>&nbsp;
 							<Button
 								type="primary"
 								size="large"
