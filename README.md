@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# admin
+React-blog博客项目的后台管理系统，基于React + Antd 。从 UI 和 功能上目前还比较简单，后续会陆续优化
 
-## Available Scripts
+## 项目截图
+#### 登录页
+![登录页](./public/后台登录页.png)
+#### 添加文章页
+![添加文章页](./public/后台添加文章页.png)
+#### 文章列表页
+![文章列表页](./public/后台文章列表页.png)
 
-In the project directory, you can run:
+## 技术栈
+* `React`： 项目开发
+* `React-router`: 多页面之间的路由
+* `Ant Design`：项目UI组件
 
-### `yarn start`
+## 数据来源
+该项目所有的数据（景区名，价格，图片，评论等）都是用[GoWhere-Crawler](https://github.com/Jacleklm/GoWhere-Crawler)爬虫工具从[移动端去哪儿网](http://piao.qunar.com/touch/)爬取的，生成的`JSON`文件放在`/static/mock`文件夹中
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 实现的功能
+#### 登录页
+- [x] 登录
+#### 添加文章页
+- [x] 添加文章
+- [x] 修改文章
+#### 文章列表页
+- [x] 查看文章列表
+- [x] 删除文章
+- [x] 点击修改文章会跳转到有文章内容的添加文章页
 
-### `yarn test`
+## 项目优化计划
+- [ ] 登录账号和密码加密
+- [ ] 实现手机号注册？或者说这种管理中台一般是管理者才能使用，管理者账号直接写在数据库就行了，不必要有注册功能
+- [ ] 页面 UI 优化，使该系统美观一些
+- [ ] 添加文章能插入图片
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 使用方法
 
-### `yarn build`
+``` bash
+# 克隆到本地
+git clone git@github.com:Jacleklm/admin.git
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 定位到该文件夹
+cd admin
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# 安装依赖
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 运行。会打开本地的3001端口，访问 http://localhost:3001 即可查看。在此之前需要先运行博客项目的数据中台
+npm run dev
 
-### `yarn eject`
+# 生成打包代码
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
