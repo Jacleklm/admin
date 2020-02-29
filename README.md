@@ -14,10 +14,6 @@ React-blog博客项目的后台管理系统，基于React + Antd 。从 UI 和 �
 * `React-router`: 多页面之间的路由
 * `Ant Design`：项目UI组件
 
-## 数据来源
-该项目所有的数据（景区名，价格，图片，评论等）都是用[GoWhere-Crawler](https://github.com/Jacleklm/GoWhere-Crawler)爬虫工具从[移动端去哪儿网](http://piao.qunar.com/touch/)爬取的，生成的`JSON`文件放在`/static/mock`文件夹中
-
-
 ## 实现的功能
 #### 登录页
 - [x] 登录
